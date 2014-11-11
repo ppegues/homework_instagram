@@ -12,22 +12,20 @@
   end
   def create_row
     photo= Photo.new
-    photo.source = "the_source"
-    photo.caption = "the_caption"
+    photo.source = params[:the_source]
+    photo.caption = params[:the_caption]
     photo.save
   end
   def destroy
-    photo = Photo.find{:id}
+    photo = Photo.find(params[:id])
     photo.destroy
   end
   def edit_form
-    @photo = Photo.find_by({:id => params[:id]})
-    @photo.caption
-    @picture = @photo.source
+    @photo = Photo.find(params[:id])
   end
   def update_row
-    photo = Photo.find{:id}
-    photo.caption ="the_caption"
+    photo= Photo.find(params[:id])
+    photo.caption = params[:the_caption]
     photo.save
   end
   end
