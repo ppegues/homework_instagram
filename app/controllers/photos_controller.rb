@@ -24,8 +24,8 @@
     @photo = Photo.find(params[:id])
   end
   def update_row
-    photo= Photo.find(params[:id])
-    photo.caption = params[:the_caption]
-    photo.save
+    @photo = Photo.find(params[:id])
+    @photo.caption = params[:the_caption]
+    @photo.save
   end
   end
